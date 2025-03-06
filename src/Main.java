@@ -4,14 +4,21 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Ensure that Java compiler also known as javac of version 22.0.1 and above is installed and added to environment variables
+ * <P>To run code, navigate to the main.java directory path in cmd just like <b>cd C:\IntelliJ IDEA\Projects\File Path Calculator\src</b></P>
+ * <p>Now, let's assume that you're in the directory. Then, run this command: javac Main.java</p>
+ * <p>This will compile it to a .class file whereby it'll generate the Main.class file if not exists in same directory in which Main.java file is stored</p>
+ * <p>Lastly, run: java Main</p>
+ * */
 public class Main {
     private volatile static ExecutorService executorService;
 
     public static void main(String[] args) {
         if (executorService == null) executorService = Executors.newFixedThreadPool(Math.max(2, getFreeMemorySize()));
         // Enter the absolute paths
-        var file1 = new File("");
-        var file2 = new File("");
+        var file1 = new File("C:\\IntelliJ IDEA\\Projects\\File Path Calculator\\files\\file1.txt");
+        var file2 = new File("C:\\IntelliJ IDEA\\Projects\\File Path Calculator\\files\\file2.txt");
         var totalLength = saveFilePathsLength(file1, file2);
         // Let's free up our JVM memory
         gc();
