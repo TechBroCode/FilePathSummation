@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * <p>Now, let's assume that you're in the directory. Then, run this command: javac Main.java</p>
  * <p>This will compile it to a .class file whereby it'll generate the Main.class file if not exists in same directory in which Main.java file is stored</p>
  * <p>Lastly, run: java Main</p>
- * */
+ */
 public class Main {
     private volatile static ExecutorService executorService;
 
